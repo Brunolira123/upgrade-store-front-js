@@ -60,10 +60,12 @@ const Header = ({ onLoginClick }) => {
               >
                 <span className="user-avatar-tech">{user.avatar}</span>
                 <span className="user-name-tech">{user.name.split(' ')[0]}</span>
+                <span className="user-arrow-tech">▼</span>
               </button>
               
               {showUserMenu && (
                 <div className="user-dropdown-tech">
+                  {/* User Info */}
                   <div className="user-info-tech">
                     <span className="user-avatar-dropdown-tech">{user.avatar}</span>
                     <div className="user-details-tech">
@@ -71,11 +73,13 @@ const Header = ({ onLoginClick }) => {
                       <span className="user-role-tech">
                         {user.role === 'admin' ? 'Administrador' : 'Cliente'}
                       </span>
+                      <span className="user-email-tech">{user.email}</span>
                     </div>
                   </div>
                   
                   <div className="dropdown-divider-tech"></div>
-                  
+
+                  {/* Menu Items */}
                   <a href="/profile" className="dropdown-item-tech">
                     <span className="dropdown-icon-tech">👤</span>
                     Meu Perfil
@@ -88,6 +92,13 @@ const Header = ({ onLoginClick }) => {
                     </a>
                   )}
                   
+                  {user.role === 'customer' && (
+                    <a href="/tradein-history" className="dropdown-item-tech">
+                      <span className="dropdown-icon-tech">🔄</span>
+                      Meus Trade-Ins
+                    </a>
+                  )}
+                  
                   {user.role === 'admin' && (
                     <a href="/admin" className="dropdown-item-tech">
                       <span className="dropdown-icon-tech">📊</span>
@@ -96,13 +107,39 @@ const Header = ({ onLoginClick }) => {
                   )}
                   
                   <div className="dropdown-divider-tech"></div>
-                  
+
+                  {/* Configurações */}
+                  <button 
+                    className="dropdown-item-tech"
+                    disabled
+                    style={{ opacity: 0.5, cursor: 'not-allowed' }}
+                    title="Em breve - Aguardando backend"
+                  >
+                    <span className="dropdown-icon-tech">⚙️</span>
+                    Configurações
+                    <span className="coming-soon-badge-tech">🔜</span>
+                  </button>
+
+                  <button 
+                    className="dropdown-item-tech"
+                    disabled
+                    style={{ opacity: 0.5, cursor: 'not-allowed' }}
+                    title="Em breve - Aguardando backend"
+                  >
+                    <span className="dropdown-icon-tech">🔒</span>
+                    Alterar Senha
+                    <span className="coming-soon-badge-tech">🔜</span>
+                  </button>
+
+                  <div className="dropdown-divider-tech"></div>
+
+                  {/* Logout */}
                   <button 
                     className="dropdown-item-tech logout-item-tech"
                     onClick={handleLogout}
                   >
                     <span className="dropdown-icon-tech">🚪</span>
-                    Sair
+                    Sair da Conta
                   </button>
                 </div>
               )}
