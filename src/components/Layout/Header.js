@@ -1,0 +1,128 @@
+import React, { useState } from 'react';
+import { useAuth } from '../../auth/AuthContext';
+import './Header.css';
+
+const Header = ({ onLoginClick }) => {
+  const { user, logout } = useAuth();
+  const [showUserMenu, setShowUserMenu] = useState(false);
+
+  const handleLogout = () => {
+    logout();
+    setShowUserMenu(false);
+  };
+
+  return (
+    <header className="header-tech">
+      <div className="header-container">
+        {/* Logo */}
+        <div className="logo-tech">
+          <div className="logo-icon-tech">
+            <div className="logo-glow-tech"></div>
+            <span className="logo-text-tech">UPGRADE</span>
+          </div>
+          <span className="logo-subtext-tech">STORE</span>
+        </div>
+
+        {/* Navigation */}
+        <nav className="nav-tech">
+          <a href="/" className="nav-link-tech">
+            <span className="nav-icon-tech">🏠</span>
+            HOME
+          </a>
+          <a href="/products" className="nav-link-tech">
+            <span className="nav-icon-tech">🎮</span>
+            PRODUTOS
+          </a>
+          <a href="/trade-in" className="nav-link-tech">
+            <span className="nav-icon-tech">🔄</span>
+            TRADE-IN
+          </a>
+          {user?.role === 'admin' && (
+            <a href="/admin" className="nav-link-tech">
+              <span className="nav-icon-tech">👨‍💼</span>
+              ADMIN
+            </a>
+          )}
+        </nav>
+
+        {/* Actions */}
+        <div className="actions-tech">
+          <button className="cart-btn-tech">
+            <span className="cart-icon-tech">🛒</span>
+            <span className="badge-tech">3</span>
+          </button>
+
+          {user ? (
+            <div className="user-menu-tech">
+              <button 
+                className="user-btn-tech"
+                onClick={() => setShowUserMenu(!showUserMenu)}
+              >
+                <span className="user-avatar-tech">{user.avatar}</span>
+                <span className="user-name-tech">{user.name.split(' ')[0]}</span>
+              </button>
+              
+              {showUserMenu && (
+                <div className="user-dropdown-tech">
+                  <div className="user-info-tech">
+                    <span className="user-avatar-dropdown-tech">{user.avatar}</span>
+                    <div className="user-details-tech">
+                      <span className="user-fullname-tech">{user.name}</span>
+                      <span className="user-role-tech">
+                        {user.role === 'admin' ? 'Administrador' : 'Cliente'}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="dropdown-divider-tech"></div>
+                  
+                  <a href="/profile" className="dropdown-item-tech">
+                    <span className="dropdown-icon-tech">👤</span>
+                    Meu Perfil
+                  </a>
+                  
+                  {user.role === 'customer' && (
+                    <a href="/my-orders" className="dropdown-item-tech">
+                      <span className="dropdown-icon-tech">📦</span>
+                      Meus Pedidos
+                    </a>
+                  )}
+                  
+                  {user.role === 'admin' && (
+                    <a href="/admin" className="dropdown-item-tech">
+                      <span className="dropdown-icon-tech">📊</span>
+                      Painel Admin
+                    </a>
+                  )}
+                  
+                  <div className="dropdown-divider-tech"></div>
+                  
+                  <button 
+                    className="dropdown-item-tech logout-item-tech"
+                    onClick={handleLogout}
+                  >
+                    <span className="dropdown-icon-tech">🚪</span>
+                    Sair
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <button 
+              className="login-btn-tech"
+              onClick={onLoginClick}
+            >
+              <span className="login-icon-tech">👤</span>
+              LOGIN
+            </button>
+          )}
+        </div>
+      </div>
+      
+      {/* Scan Line Effect */}
+      <div className="scan-line-tech"></div>
+    </header>
+  );
+};
+
+export default Header;

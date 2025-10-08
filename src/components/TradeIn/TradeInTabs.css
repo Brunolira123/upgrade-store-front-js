@@ -1,0 +1,443 @@
+/* TradeIn Tabs Tech Styles */
+.tradein-container-tech {
+  padding: 2rem;
+  background: var(--bg-card);
+  border-radius: 16px;
+}
+
+.tradein-header-tech {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tradein-title-tech {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.tradein-title-accent-tech {
+  background: var(--gradient-tech);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tradein-subtitle-tech {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.tradein-title-line-tech {
+  width: 100px;
+  height: 3px;
+  background: var(--gradient-tech);
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+/* Tabs */
+.tradein-tabs-container-tech {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.tradein-tab-tech {
+  padding: 1rem 2rem;
+  border: 2px solid var(--border-tech);
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tradein-tab-tech:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.tradein-tab-active-tech {
+  background: var(--gradient-tech);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.tradein-tab-icon-tech {
+  font-size: 1.2rem;
+}
+
+.tradein-content-tech {
+  margin-bottom: 2rem;
+}
+
+/* Forms */
+.tradein-form-tech {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tradein-form-header-tech {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tradein-form-title-tech {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.tradein-form-icon-tech {
+  font-size: 1.8rem;
+}
+
+.tradein-form-description-tech {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.tradein-form-grid-tech {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tradein-input-group-tech {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tradein-label-tech {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tradein-input-tech {
+  padding: 1rem;
+  border: 2px solid var(--border-tech);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.tradein-input-tech:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+  outline: none;
+}
+
+.tradein-select-tech {
+  padding: 1rem;
+  border: 2px solid var(--border-tech);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tradein-select-tech:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+  outline: none;
+}
+
+.tradein-textarea-tech {
+  padding: 1rem;
+  border: 2px solid var(--border-tech);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  resize: vertical;
+  transition: all 0.3s ease;
+  min-height: 100px;
+}
+
+.tradein-textarea-tech:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+  outline: none;
+}
+
+/* Benefits */
+.tradein-benefits-tech {
+  background: rgba(0, 212, 255, 0.05);
+  border: 1px solid var(--border-tech);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tradein-benefits-title-tech {
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.tradein-benefits-grid-tech {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.tradein-benefit-item-tech {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.tradein-benefit-icon-tech {
+  font-size: 1.2rem;
+}
+
+/* Buttons */
+.tradein-submit-btn-tech {
+  background: var(--gradient-tech);
+  color: white;
+  border: none;
+  padding: 1.2rem 2rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.tradein-submit-btn-tech:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+}
+
+.tradein-sell-btn-tech {
+  background: linear-gradient(135deg, #00ff88, #00d4ff);
+  color: white;
+  border: none;
+  padding: 1.2rem 2rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.tradein-sell-btn-tech:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 255, 136, 0.4);
+}
+
+.tradein-button-icon-tech {
+  font-size: 1.3rem;
+}
+
+/* Features */
+.tradein-features-tech {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-tech);
+}
+
+.tradein-feature-item-tech {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(0, 212, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid var(--border-tech);
+}
+
+.tradein-feature-icon-tech {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+}
+
+.tradein-feature-text-tech {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tradein-feature-title-tech {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.tradein-feature-desc-tech {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+/* ===== TRADEIN TABS RESPONSIVE ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .tradein-container-tech {
+    padding: 1.5rem;
+  }
+  
+  .tradein-title-tech {
+    font-size: 2rem;
+  }
+  
+  .tradein-form-grid-tech {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Large */
+@media (max-width: 768px) {
+  .tradein-container-tech {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  .tradein-tabs-container-tech {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .tradein-tab-tech {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .tradein-title-tech {
+    font-size: 1.8rem;
+  }
+  
+  .tradein-form-grid-tech {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .tradein-benefits-grid-tech {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .tradein-features-tech {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .tradein-form-title-tech {
+    font-size: 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+  .tradein-container-tech {
+    padding: 0.75rem;
+    margin: 0.5rem;
+  }
+  
+  .tradein-title-tech {
+    font-size: 1.5rem;
+  }
+  
+  .tradein-subtitle-tech {
+    font-size: 1rem;
+  }
+  
+  .tradein-form-title-tech {
+    font-size: 1.3rem;
+  }
+  
+  .tradein-form-description-tech {
+    font-size: 1rem;
+  }
+  
+  .tradein-input-tech,
+  .tradein-select-tech,
+  .tradein-textarea-tech {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  .tradein-submit-btn-tech,
+  .tradein-sell-btn-tech {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Extra Small */
+@media (max-width: 360px) {
+  .tradein-container-tech {
+    padding: 0.5rem;
+    margin: 0.25rem;
+  }
+  
+  .tradein-title-tech {
+    font-size: 1.3rem;
+  }
+  
+  .tradein-tab-tech {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .tradein-form-title-tech {
+    font-size: 1.1rem;
+  }
+  
+  .tradein-benefits-title-tech {
+    font-size: 1.1rem;
+  }
+}
