@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-// Context para gerenciar autenticação
 const AuthContext = createContext();
 
 export const useAuth = () => {
@@ -14,6 +14,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   // Verifica se usuário está logado ao carregar a página
   useEffect(() => {
@@ -27,7 +28,6 @@ export const AuthProvider = ({ children }) => {
   // Login function
   const login = async (email, password) => {
     try {
-      // Simulação de API - depois substituímos por chamada real
       const users = [
         {
           id: 1,
@@ -51,10 +51,16 @@ export const AuthProvider = ({ children }) => {
       
       if (foundUser) {
         const userData = { ...foundUser };
-        delete userData.password; // Remove senha do estado
+        delete userData.password;
         
         setUser(userData);
         localStorage.setItem('upgradeStore_user', JSON.stringify(userData));
+        
+        // Redireciona admin para dashboard
+        if (userData.role === 'admin') {
+          navigate('/admin');
+        }
+        
         return { success: true, user: userData };
       } else {
         return { success: false, error: 'Credenciais inválidas' };
@@ -68,6 +74,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setUser(null);
     localStorage.removeItem('upgradeStore_user');
+    navigate('/');
   };
 
   // Check if user is admin
