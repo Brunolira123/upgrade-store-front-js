@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../auth/AuthContext';
+import { useNavigate } from 'react-router-dom';
 import './AdminProducts.css';
 
 const AdminProducts = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -62,8 +64,7 @@ const AdminProducts = () => {
   });
 
   const handleAddProduct = () => {
-    setEditingProduct(null);
-    setShowProductModal(true);
+    navigate('/admin/products/create');
   };
 
   const handleEditProduct = (product) => {

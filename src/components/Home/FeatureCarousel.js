@@ -59,12 +59,12 @@ const FeatureCarousel = () => {
             <div className="carousel-icon-tech">🛡️</div>
             <h3 className="card-title-tech">GARANTIA TECH</h3>
             <p className="card-text-tech">
-              Até 2 anos de garantia em todos os produtos. Suporte 24/7 especializado
+              Até 06 meses de garantia em todos os produtos. Suporte 24/7 especializado
             </p>
             <div className="warranty-features-tech">
               <div className="warranty-item-tech">
                 <span className="warranty-icon-tech">✅</span>
-                <span>2 Anos Garantia</span>
+                <span>06 Meses Garantia</span>
               </div>
               <div className="warranty-item-tech">
                 <span className="warranty-icon-tech">🛠️</span>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './components/Layout/Header';
 import FeatureCarousel from './components/Home/FeatureCarousel';
 import ProductGrid from './components/Products/ProductGrid';
@@ -9,12 +9,20 @@ import AdminDashboard from './pages/admin/Dashboard';
 import { AuthProvider } from './auth/AuthContext';
 import Login from './auth/Login';
 import './App.css';
+import ProductsPage from './pages/ProductsPage';
+import ProductDetail from './pages/ProductDetail';
+import { ProductProvider } from './context/ProductContext'; 
 
 // Componente da Home
 const HomePage = ({ onShowTradeIn, onShowLogin }) => {
+   const navigate = useNavigate();
+
+   const handleProductsClick = () => {
+    navigate('/products'); // NAVEGAÇÃO PARA PRODUTOS
+  };
   return (
     <>
-      {/* Hero Section Tech */}
+            {/* Hero Section Tech */}
       <section className="hero-tech">
         <div className="tech-container">
           <div className="hero-content-tech">
@@ -31,16 +39,19 @@ const HomePage = ({ onShowTradeIn, onShowLogin }) => {
             <div className="hero-text-tech">
               <h1 className="hero-title-tech">
                 <span className="tech-gradient">UPGRADE</span> YOUR 
-                <span className="tech-accent"> RIG</span>
+                <span className="tech-accent"> SETUP</span>
               </h1>
               <p className="hero-subtitle-tech">
                 As placas de vídeo mais potentes do mercado. 
                 <span className="neon-text"> Performance extrema para gamers e creators.</span>
               </p>
               <div className="hero-buttons-tech">
-                <button className="btn-primary-tech">
+                <button 
+                  className="btn-primary-tech" 
+                  onClick={handleProductsClick} // ADICIONE ESTE ONCLICK
+                >
                   <span className="btn-icon">🎮</span>
-                  EXPLORAR CATÁLOGO
+                  NOSSOS PRODUTOS
                 </button>
                 <button 
                   className="btn-secondary-tech"
@@ -100,7 +111,8 @@ const AppContent = () => {
             <Footer />
           </>
         } />
-        <Route path="/products" element={<div>Página de Produtos em desenvolvimento...</div>} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/product/:id" element={<ProductDetail />} /> {/* ADICIONE ESTA ROTA */}
         <Route path="/trade-in" element={<div>Página de Trade-In em desenvolvimento...</div>} />
         <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
@@ -135,9 +147,11 @@ const AppContent = () => {
 function App() {
   return (
     <Router>
-      <AuthProvider>
-        <AppContent />
-      </AuthProvider>
+   <AuthProvider>
+  <ProductProvider>
+    <AppContent />
+  </ProductProvider>
+</AuthProvider>
     </Router>
   );
 }

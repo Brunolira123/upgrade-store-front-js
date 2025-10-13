@@ -3,7 +3,7 @@ import { useAuth } from '../../auth/AuthContext';
 import './admin.css';
 
 const AdminDashboard = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth(); // Adicionei o logout aqui
   const [activeTab, setActiveTab] = useState('overview');
   const [stats, setStats] = useState({
     totalProducts: 0,
@@ -11,6 +11,13 @@ const AdminDashboard = () => {
     pendingTradeIns: 0,
     totalRevenue: 0
   });
+
+  // Função de logout
+  const handleLogout = () => {
+    if (window.confirm('Tem certeza que deseja sair do painel administrativo?')) {
+      logout();
+    }
+  };
 
   // Dados mockados - depois vem da API
   useEffect(() => {
@@ -58,6 +65,14 @@ const AdminDashboard = () => {
             <button className="admin-action-btn-tech secondary-tech">
               <span className="action-icon-tech">⚙️</span>
               Configurações
+            </button>
+            {/* BOTÃO DE LOGOUT - VERSÃO COM TEXTO */}
+            <button 
+              className="admin-action-btn-tech logout-tech"
+              onClick={handleLogout}
+            >
+              <span className="action-icon-tech">🚪</span>
+              Sair
             </button>
           </div>
         </div>
@@ -156,7 +171,7 @@ const AdminDashboard = () => {
   );
 };
 
-// Componentes das Tabs
+// Componentes das Tabs (permanecem os mesmos)
 const OverviewTab = () => {
   return (
     <div className="tab-content-tech">
