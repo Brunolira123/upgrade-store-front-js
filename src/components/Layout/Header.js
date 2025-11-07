@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../auth/AuthContext';
-import { useNavigate } from 'react-router-dom'; // ← IMPORTAR
+import { useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = ({ onLoginClick }) => {
   const { user, logout } = useAuth();
   const [showUserMenu, setShowUserMenu] = useState(false);
-  const navigate = useNavigate(); // ← INICIALIZAR
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
@@ -16,6 +16,11 @@ const Header = ({ onLoginClick }) => {
   // ← FUNÇÃO PARA IR PARA HOME
   const handleLogoClick = () => {
     navigate('/');
+  };
+
+  // ← FUNÇÃO PARA VENDA
+  const handleSellClick = () => {
+    navigate('/sell');
   };
 
   return (
@@ -30,18 +35,24 @@ const Header = ({ onLoginClick }) => {
           <span className="logo-subtext-tech">STORE</span>
         </div>
 
-        {/* Navigation - SEM LINK HOME */}
+        {/* Navigation - COM BOTÃO VENDA */}
         <nav className="nav-tech">
-          {/* REMOVIDO: Link HOME com ícone 🏠 */}
-          
           <a href="/products" className="nav-link-tech">
             <span className="nav-icon-tech">🎮</span>
             PRODUTOS
           </a>
+          
+          {/* BOTÃO VENDA NOVO */}
+          <button className="nav-link-tech sell-btn-tech" onClick={handleSellClick}>
+            <span className="nav-icon-tech">💰</span>
+            VENDA
+          </button>
+          
           <a href="/trade-in" className="nav-link-tech">
             <span className="nav-icon-tech">🔄</span>
             TRADE-IN
           </a>
+          
           {user?.role === 'admin' && (
             <a href="/admin" className="nav-link-tech">
               <span className="nav-icon-tech">👨‍💼</span>
