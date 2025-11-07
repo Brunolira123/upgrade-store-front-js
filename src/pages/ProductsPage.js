@@ -206,7 +206,7 @@ const ProductsPage = () => {
       <div className="products-header-tech">
         <div className="products-hero-tech">
           <h1 className="products-title-tech">
-            <span className="title-accent-tech">TECH</span> STORE
+            <span className="title-accent-tech">UPGRADE</span> STORE
           </h1>
           <p className="products-subtitle-tech">
             As placas de vídeo mais potentes para gamers e creators

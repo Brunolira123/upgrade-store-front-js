@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../auth/AuthContext';
+import { useNavigate } from 'react-router-dom'; // ← IMPORTAR
 import './Header.css';
 
 const Header = ({ onLoginClick }) => {
   const { user, logout } = useAuth();
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const navigate = useNavigate(); // ← INICIALIZAR
 
   const handleLogout = () => {
     logout();
     setShowUserMenu(false);
   };
 
+  // ← FUNÇÃO PARA IR PARA HOME
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
   return (
     <header className="header-tech">
       <div className="header-container">
-        {/* Logo */}
-        <div className="logo-tech">
+        {/* Logo - AGORA CLICÁVEL */}
+        <div className="logo-tech" onClick={handleLogoClick}>
           <div className="logo-icon-tech">
             <div className="logo-glow-tech"></div>
             <span className="logo-text-tech">UPGRADE</span>
@@ -23,12 +30,10 @@ const Header = ({ onLoginClick }) => {
           <span className="logo-subtext-tech">STORE</span>
         </div>
 
-        {/* Navigation */}
+        {/* Navigation - SEM LINK HOME */}
         <nav className="nav-tech">
-          <a href="/" className="nav-link-tech">
-            <span className="nav-icon-tech">🏠</span>
-            HOME
-          </a>
+          {/* REMOVIDO: Link HOME com ícone 🏠 */}
+          
           <a href="/products" className="nav-link-tech">
             <span className="nav-icon-tech">🎮</span>
             PRODUTOS
