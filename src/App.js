@@ -12,6 +12,8 @@ import './App.css';
 import ProductsPage from './pages/ProductsPage';
 import ProductDetail from './pages/ProductDetail';
 import { ProductProvider } from './context/ProductContext'; 
+import SellPage from './pages/Sellpage';
+
 
 // Componente da Home
 const HomePage = ({ onShowTradeIn, onShowLogin }) => {
@@ -112,9 +114,10 @@ const AppContent = () => {
           </>
         } />
         <Route path="/products" element={<ProductsPage />} />
-        <Route path="/product/:id" element={<ProductDetail />} /> {/* ADICIONE ESTA ROTA */}
+        <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/trade-in" element={<div>Página de Trade-In em desenvolvimento...</div>} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/sell" element={<SellPage />} /> {/* ← ADICIONAR ROTA VENDA */}
       </Routes>
 
       {/* Trade-In Modal */}
@@ -147,11 +150,11 @@ const AppContent = () => {
 function App() {
   return (
     <Router>
-   <AuthProvider>
-  <ProductProvider>
-    <AppContent />
-  </ProductProvider>
-</AuthProvider>
+      <AuthProvider>
+        <ProductProvider>
+          <AppContent />
+        </ProductProvider>
+      </AuthProvider>
     </Router>
   );
 }
