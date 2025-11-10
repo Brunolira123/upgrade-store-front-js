@@ -174,9 +174,7 @@ const ProductDetail = () => {
               </div>
             )}
             
-            <div className="price-installments-tech">
-              ou 12x de R$ {(product.price / 12).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
-            </div>
+            
           </div>
 
           {/* Short Description */}
@@ -252,22 +250,22 @@ const ProductDetail = () => {
             <div className="delivery-item-tech">
               <span className="delivery-icon-tech">🚚</span>
               <div className="delivery-text-tech">
-                <strong>Frete Grátis</strong>
-                <span>Para todo Brasil</span>
+                <strong>Frete Seguro</strong>
+                <span>Enviamos para todo o Brasil!</span>
               </div>
             </div>
             <div className="delivery-item-tech">
               <span className="delivery-icon-tech">⚡</span>
               <div className="delivery-text-tech">
                 <strong>Entrega Expressa</strong>
-                <span>2-5 dias úteis</span>
+                <span>Postagem em 2 à 5 dias úteis</span>
               </div>
             </div>
             <div className="delivery-item-tech">
               <span className="delivery-icon-tech">🛡️</span>
               <div className="delivery-text-tech">
                 <strong>Garantia</strong>
-                <span>{product.warranty}</span>
+                <span>6 meses de garantia</span>
               </div>
             </div>
           </div>

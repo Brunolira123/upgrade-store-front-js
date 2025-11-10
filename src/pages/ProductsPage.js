@@ -424,7 +424,8 @@ const ProductsPage = () => {
                       className="btn-quickview-tech"
                       onClick={() => handleQuickView(product)}
                     >
-                      👁️
+                      🔄
+                      TRADE IN
                     </button>
                   </div>
                 </div>
