@@ -2,102 +2,97 @@
 .sell-page-tech {
   min-height: 100vh;
   background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
-  padding: 1rem 0;
+  padding: 2rem 0;
 }
 
 .sell-container-tech {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 /* Hero Section */
 .sell-hero-tech {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .sell-title-tech {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 800;
   background: linear-gradient(135deg, #00d4ff 0%, #ff0080 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
 .sell-subtitle-tech {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #b0b0c0;
-  margin-bottom: 1.5rem;
-  line-height: 1.4;
+  margin-bottom: 2rem;
 }
 
 /* Features Grid */
 .sell-features-tech {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .feature-tech {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid #2a2a3a;
-  border-radius: 10px;
-  padding: 1rem;
+  border-radius: 12px;
+  padding: 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
 }
 
 .feature-tech:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
   border-color: #00d4ff;
-  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
 }
 
 .feature-icon-tech {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
   display: block;
 }
 
 .feature-tech h3 {
   color: #00d4ff;
-  margin-bottom: 0.3rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
 }
 
 .feature-tech p {
   color: #b0b0c0;
-  font-size: 0.8rem;
-  line-height: 1.3;
+  font-size: 0.9rem;
 }
 
 /* Form Container */
 .sell-form-container-tech {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid #2a2a3a;
-  border-radius: 12px;
-  padding: 1.5rem;
+  border-radius: 16px;
+  padding: 2.5rem;
   backdrop-filter: blur(10px);
 }
 
 .form-title-tech {
   color: #00d4ff;
-  font-size: 1.3rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
   text-align: center;
-  font-weight: 700;
 }
 
 /* Form Grid */
 .form-grid-tech {
   display: grid;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 
 .form-group-tech {
@@ -108,55 +103,20 @@
 .form-label-tech {
   color: #b0b0c0;
   font-weight: 600;
-  margin-bottom: 0.4rem;
-  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
 }
 
 .form-input-tech,
-.form-textarea-tech {
+.form-textarea-tech,
+.form-select-tech {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid #2a2a3a;
-  border-radius: 6px;
-  padding: 0.8rem;
+  border-radius: 8px;
+  padding: 1rem;
   color: white;
-  font-size: 0.9rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* CORREÇÃO DOS SELECTS - FUNDO ESCURO */
-.form-select-tech {
-  background: rgba(30, 30, 46, 0.95) !important;
-  border: 1px solid #2a2a3a !important;
-  border-radius: 6px !important;
-  padding: 0.8rem !important;
-  color: white !important;
-  font-size: 0.9rem !important;
-  transition: all 0.3s ease !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-  cursor: pointer !important;
-  -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  appearance: none !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2300d4ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") !important;
-  background-repeat: no-repeat !important;
-  background-position: right 0.8rem center !important;
-  background-size: 14px !important;
-}
-
-/* Opções do select com fundo escuro */
-.form-select-tech option {
-  background: #1e1e2e !important;
-  color: white !important;
-  padding: 12px !important;
-  border: none !important;
-}
-
-.form-select-tech optgroup {
-  background: #1a1a2e !important;
-  color: #00d4ff !important;
 }
 
 .form-input-tech:focus,
@@ -169,15 +129,15 @@
 
 .form-textarea-tech {
   resize: vertical;
-  min-height: 100px;
+  min-height: 120px;
   font-family: inherit;
 }
 
 /* File Upload */
 .file-upload-section-tech {
   border: 2px dashed #2a2a3a;
-  border-radius: 10px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  padding: 2rem;
   text-align: center;
   transition: all 0.3s ease;
 }
@@ -188,20 +148,17 @@
 
 .file-upload-area-tech {
   cursor: pointer;
-  display: block;
 }
 
 .file-upload-icon-tech {
-  font-size: 2.2rem;
-  margin-bottom: 0.8rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
   display: block;
 }
 
 .file-upload-text-tech {
   color: #b0b0c0;
-  margin-bottom: 0.8rem;
-  font-size: 0.9rem;
-  line-height: 1.3;
+  margin-bottom: 1rem;
 }
 
 .file-input-tech {
@@ -211,14 +168,14 @@
 /* Media Preview */
 .media-preview-tech {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 0.8rem;
-  margin-top: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .media-preview-item-tech {
   position: relative;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
   aspect-ratio: 1;
   background: rgba(255, 255, 255, 0.1);
@@ -238,117 +195,89 @@
 
 .media-remove-tech {
   position: absolute;
-  top: 3px;
-  right: 3px;
+  top: 5px;
+  right: 5px;
   background: rgba(255, 0, 128, 0.8);
   border: none;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   color: white;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
-  line-height: 1;
+  font-size: 0.8rem;
 }
 
 /* Price Section */
 .price-section-tech {
   background: rgba(0, 212, 255, 0.1);
   border: 1px solid rgba(0, 212, 255, 0.3);
-  border-radius: 10px;
-  padding: 1.2rem;
+  border-radius: 12px;
+  padding: 1.5rem;
 }
 
 .price-input-container-tech {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .currency-tech {
   color: #00d4ff;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .price-input-tech {
   flex: 1;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid #2a2a3a;
-  border-radius: 6px;
-  padding: 0.8rem;
+  border-radius: 8px;
+  padding: 1rem;
   color: white;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  /* REMOVER SETINHAS DE NÚMERO */
-  -moz-appearance: textfield !important;
-  -webkit-appearance: none !important;
-  appearance: textfield !important;
-}
-
-/* Remover setinhas no Webkit (Chrome, Safari) */
-.price-input-tech::-webkit-outer-spin-button,
-.price-input-tech::-webkit-inner-spin-button {
-  -webkit-appearance: none !important;
-  margin: 0 !important;
-}
-
-/* Remover setinhas no Firefox */
-.price-input-tech[type=number] {
-  -moz-appearance: textfield !important;
-}
-
-.price-input-tech:focus {
-  outline: none;
-  border-color: #00d4ff;
-  box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
 }
 
 /* Form Actions */
 .form-actions-tech {
   display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
   justify-content: center;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .btn-submit-tech {
   background: linear-gradient(135deg, #00d4ff 0%, #ff0080 100%);
   color: white;
   border: none;
-  padding: 0.9rem 1.5rem;
-  border-radius: 6px;
+  padding: 1rem 2rem;
+  border-radius: 8px;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  width: 100%;
 }
 
 .btn-submit-tech:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
 }
 
 .btn-back-tech {
   background: transparent;
   color: #b0b0c0;
   border: 1px solid #2a2a3a;
-  padding: 0.9rem 1.5rem;
-  border-radius: 6px;
+  padding: 1rem 2rem;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: 100%;
-  font-size: 0.9rem;
 }
 
 .btn-back-tech:hover {
@@ -366,200 +295,43 @@
 .success-message-tech {
   background: rgba(0, 255, 136, 0.1);
   border: 1px solid rgba(0, 255, 136, 0.3);
-  border-radius: 10px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  padding: 2rem;
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .success-icon-tech {
-  font-size: 2.5rem;
-  margin-bottom: 0.8rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
   display: block;
 }
 
 .success-title-tech {
   color: #00ff88;
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-
-/* Tablets */
-@media (min-width: 768px) {
-  .sell-page-tech {
-    padding: 2rem 0;
-  }
-  
+/* Responsive */
+@media (max-width: 768px) {
   .sell-container-tech {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
   
   .sell-title-tech {
     font-size: 2.5rem;
   }
   
-  .sell-subtitle-tech {
-    font-size: 1.1rem;
-  }
-  
-  .sell-features-tech {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-  
-  .feature-tech {
+  .sell-form-container-tech {
     padding: 1.5rem;
   }
   
-  .feature-icon-tech {
-    font-size: 2.5rem;
-  }
-  
-  .sell-form-container-tech {
-    padding: 2rem;
-    border-radius: 14px;
-  }
-  
-  .form-title-tech {
-    font-size: 1.5rem;
-  }
-  
-  .form-grid-tech {
-    gap: 1.5rem;
-  }
-  
-  .form-input-tech,
-  .form-textarea-tech {
-    padding: 1rem;
-    font-size: 1rem;
-  }
-  
-  .form-select-tech {
-    padding: 1rem !important;
-    font-size: 1rem !important;
-    background-position: right 1rem center !important;
-    background-size: 16px !important;
-  }
-  
   .form-actions-tech {
-    flex-direction: row;
-    gap: 1rem;
-  }
-  
-  .btn-submit-tech,
-  .btn-back-tech {
-    width: auto;
-    padding: 1rem 2rem;
-  }
-  
-  .media-preview-tech {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 1rem;
-  }
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-  .sell-title-tech {
-    font-size: 3rem;
-  }
-  
-  .sell-subtitle-tech {
-    font-size: 1.2rem;
-  }
-  
-  .sell-features-tech {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .sell-form-container-tech {
-    padding: 2.5rem;
-    border-radius: 16px;
-  }
-  
-  .media-preview-tech {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  }
-}
-
-/* Mobile Small */
-@media (max-width: 360px) {
-  .sell-container-tech {
-    padding: 0 0.8rem;
-  }
-  
-  .sell-title-tech {
-    font-size: 1.8rem;
-  }
-  
-  .sell-subtitle-tech {
-    font-size: 0.9rem;
+    flex-direction: column;
   }
   
   .sell-features-tech {
     grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-  
-  .feature-tech {
-    padding: 0.8rem;
-  }
-  
-  .sell-form-container-tech {
-    padding: 1rem;
-    border-radius: 10px;
-  }
-  
-  .form-title-tech {
-    font-size: 1.1rem;
-  }
-  
-  .form-grid-tech {
-    gap: 1rem;
-  }
-  
-  .form-select-tech {
-    padding: 0.7rem !important;
-    font-size: 0.85rem !important;
-  }
-  
-  .file-upload-section-tech {
-    padding: 1rem;
-  }
-  
-  .file-upload-icon-tech {
-    font-size: 1.8rem;
-  }
-  
-  .media-preview-tech {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .price-section-tech {
-    padding: 1rem;
-  }
-}
-
-/* Orientation Landscape para Mobile */
-@media (max-height: 500px) and (orientation: landscape) {
-  .sell-page-tech {
-    padding: 1rem 0;
-    min-height: auto;
-  }
-  
-  .sell-hero-tech {
-    margin-bottom: 1rem;
-  }
-  
-  .sell-features-tech {
-    margin-bottom: 1.5rem;
-  }
-  
-  .sell-form-container-tech {
-    padding: 1rem;
   }
 }

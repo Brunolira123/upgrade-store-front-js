@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SellPage.css';
+import Footer from '../components/Layout/Footer';
 
 const SellPage = () => {
   const navigate = useNavigate();
@@ -430,6 +431,7 @@ const SellPage = () => {
           </form>
         </div>
       </div>
+            <Footer />
     </div>
   );
 };

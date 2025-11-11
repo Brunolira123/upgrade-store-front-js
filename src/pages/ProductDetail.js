@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useProducts } from '../context/ProductContext';
 import './ProductDetail.css';
 
-
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -34,14 +33,14 @@ const ProductDetail = () => {
         setProductReviews(getProductReviews(id));
       }
       setLoading(false);
-    }, 500);
+    }, 800);
   }, [id, getProductById, getRelatedProducts, getProductReviews]);
 
   // Handlers
   const handleAddToCart = () => {
     if (product) {
       addToCart(product, quantity);
-      alert(`${quantity}x ${product.name} adicionado ao carrinho!`);
+      alert(`✅ ${quantity}x ${product.name} adicionado ao carrinho!`);
     }
   };
 
@@ -70,12 +69,20 @@ const ProductDetail = () => {
 
   const handleReviewSubmit = (e) => {
     e.preventDefault();
-    if (newReview.user && newReview.comment) {
-      addReview(product.id, newReview);
-      setNewReview({ rating: 5, comment: '', user: '' });
-      setProductReviews(getProductReviews(id));
-      alert('Avaliação enviada com sucesso!');
+    if (!newReview.user.trim() || !newReview.comment.trim()) {
+      alert('Por favor, preencha todos os campos da avaliação!');
+      return;
     }
+    
+    if (newReview.comment.length < 10) {
+      alert('A avaliação precisa ter pelo menos 10 caracteres!');
+      return;
+    }
+
+    addReview(product.id, newReview);
+    setNewReview({ rating: 5, comment: '', user: '' });
+    setProductReviews(getProductReviews(id));
+    alert('✅ Avaliação enviada com sucesso!');
   };
 
   if (loading) {
@@ -92,6 +99,7 @@ const ProductDetail = () => {
       <div className="product-not-found-tech">
         <div className="not-found-icon-tech">🔍</div>
         <h2>Produto não encontrado</h2>
+        <p>O produto que você está procurando não existe ou foi removido.</p>
         <button onClick={() => navigate('/products')} className="btn-back-tech">
           ← Voltar para produtos
         </button>
@@ -121,7 +129,12 @@ const ProductDetail = () => {
             <div className="product-badges-tech">
               {product.isNew && <span className="badge-new-tech">🆕 NOVO</span>}
               {product.isPromo && <span className="badge-promo-tech">🔥 PROMOÇÃO</span>}
-              <span className="badge-stock-tech">{product.stock} em estoque</span>
+              {product.stock < 3 && (
+                <span className="badge-warning-tech">⚠️ ÚLTIMAS UNIDADES</span>
+              )}
+              <span className={`badge-stock-tech ${product.stock < 5 ? 'low-stock-tech' : ''}`}>
+                {product.stock} em estoque
+              </span>
             </div>
           </div>
 
@@ -174,7 +187,7 @@ const ProductDetail = () => {
               </div>
             )}
             
-            
+      
           </div>
 
           {/* Short Description */}
@@ -265,7 +278,7 @@ const ProductDetail = () => {
               <span className="delivery-icon-tech">🛡️</span>
               <div className="delivery-text-tech">
                 <strong>Garantia</strong>
-                <span>6 meses de garantia</span>
+                <span>{product.warranty || '6 meses de garantia'}</span>
               </div>
             </div>
           </div>
@@ -283,35 +296,35 @@ const ProductDetail = () => {
               </div>
               <div className="spec-row-tech">
                 <span className="spec-label-tech">Memória:</span>
-                <span className="spec-value-tech">24GB GDDR6X</span>
+                <span className="spec-value-tech">{product.memory || '24GB GDDR6X'}</span>
               </div>
               <div className="spec-row-tech">
                 <span className="spec-label-tech">Arquitetura:</span>
-                <span className="spec-value-tech">Ada Lovelace</span>
+                <span className="spec-value-tech">{product.architecture || 'Ada Lovelace'}</span>
               </div>
               <div className="spec-row-tech">
                 <span className="spec-label-tech">Clock Boost:</span>
-                <span className="spec-value-tech">2.52 GHz</span>
+                <span className="spec-value-tech">{product.clockSpeed || '2.52 GHz'}</span>
               </div>
               <div className="spec-row-tech">
                 <span className="spec-label-tech">Consumo:</span>
-                <span className="spec-value-tech">450W</span>
+                <span className="spec-value-tech">{product.powerConsumption || '450W'}</span>
               </div>
               <div className="spec-row-tech">
                 <span className="spec-label-tech">Recomendação Fonte:</span>
-                <span className="spec-value-tech">{product.powerRequirement}</span>
+                <span className="spec-value-tech">{product.powerRequirement || '850W'}</span>
               </div>
               <div className="spec-row-tech">
                 <span className="spec-label-tech">Portas:</span>
-                <span className="spec-value-tech">{product.ports.join(', ')}</span>
+                <span className="spec-value-tech">{product.ports?.join(', ') || '3x DisplayPort, 1x HDMI'}</span>
               </div>
               <div className="spec-row-tech">
                 <span className="spec-label-tech">Dimensões:</span>
-                <span className="spec-value-tech">{product.dimensions}</span>
+                <span className="spec-value-tech">{product.dimensions || '304 x 137 x 61 mm'}</span>
               </div>
               <div className="spec-row-tech">
                 <span className="spec-label-tech">Peso:</span>
-                <span className="spec-value-tech">{product.weight}</span>
+                <span className="spec-value-tech">{product.weight || '2.5 kg'}</span>
               </div>
             </div>
 
@@ -401,6 +414,7 @@ const ProductDetail = () => {
                           type="text"
                           value={newReview.user}
                           onChange={(e) => setNewReview({...newReview, user: e.target.value})}
+                          placeholder="Digite seu nome"
                           required
                         />
                       </div>
@@ -425,6 +439,7 @@ const ProductDetail = () => {
                           value={newReview.comment}
                           onChange={(e) => setNewReview({...newReview, comment: e.target.value})}
                           rows="4"
+                          placeholder="Conte sua experiência com o produto..."
                           required
                         />
                       </div>
@@ -436,19 +451,26 @@ const ProductDetail = () => {
                 </div>
 
                 <div className="reviews-list-tech">
-                  {productReviews.map(review => (
-                    <div key={review.id} className="review-card-tech">
-                      <div className="review-header-tech">
-                        <div className="reviewer-info-tech">
-                          <span className="reviewer-name-tech">{review.user}</span>
-                          {review.verified && <span className="verified-badge-tech">✓ Verificado</span>}
+                  {productReviews.length > 0 ? (
+                    productReviews.map(review => (
+                      <div key={review.id} className="review-card-tech">
+                        <div className="review-header-tech">
+                          <div className="reviewer-info-tech">
+                            <span className="reviewer-name-tech">{review.user}</span>
+                            {review.verified && <span className="verified-badge-tech">✓ Verificado</span>}
+                          </div>
+                          <div className="review-rating-tech">{"⭐".repeat(review.rating)}</div>
                         </div>
-                        <div className="review-rating-tech">{"⭐".repeat(review.rating)}</div>
+                        <p className="review-comment-tech">{review.comment}</p>
+                        <div className="review-date-tech">{review.date}</div>
                       </div>
-                      <p className="review-comment-tech">{review.comment}</p>
-                      <div className="review-date-tech">{review.date}</div>
+                    ))
+                  ) : (
+                    <div className="no-reviews-tech">
+                      <span className="no-reviews-icon-tech">💬</span>
+                      <p>Seja o primeiro a avaliar este produto!</p>
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
             </div>
@@ -469,11 +491,18 @@ const ProductDetail = () => {
               >
                 <div className="related-image-tech">
                   <span className="related-emoji-tech">{relatedProduct.images[0]}</span>
+                  <div className="related-badges-tech">
+                    {relatedProduct.isNew && <span className="badge-new-small-tech">🆕</span>}
+                    {relatedProduct.isPromo && <span className="badge-promo-small-tech">🔥</span>}
+                  </div>
                 </div>
                 <div className="related-info-tech">
                   <h4 className="related-name-tech">{relatedProduct.name}</h4>
                   <div className="related-price-tech">
                     R$ {relatedProduct.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                  </div>
+                  <div className="related-rating-tech">
+                    ⭐ {relatedProduct.rating} ({relatedProduct.reviews})
                   </div>
                 </div>
               </div>
